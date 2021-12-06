@@ -1,0 +1,137 @@
+:host {
+  width: 100%;
+}
+.choice {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  position: relative;
+  /*margin: 0 1% 5%;*/
+  padding: 50px;
+  font-size: 15px;
+}
+
+.value-button-table {
+
+}
+
+.request-button-table {
+  text-align: center;
+}
+
+.comm-button-table {
+  width: 100%;
+}
+
+.comm-button-table input {
+  background-color: #0d110d;
+  border: none;
+  color: inherit;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 1% 0% 1%;
+}
+
+fieldset {
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  text-align: center;
+}
+
+.text-error {
+  color: #fc8b11;
+}
+
+.input-button {
+  background-color: #192119;
+  border: 0.2rem solid #fff;
+  /*border-radius: 2rem;*/
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #134afe,
+  0 0 0.8rem #13b7fe,
+  0 0 2.8rem #13c7fe,
+  inset 0 0 .7rem #13fef6;
+  color: #5b504f;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#send, #res {
+  background-color: #000000;
+}
+
+#send:hover, #res:hover {
+  background-color: #192119;
+}
+
+.graph {
+  width: 360px;
+  height: 360px;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position:relative;
+}
+
+#graph-svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.paint {
+  filter: drop-shadow(0px 0px 10px #058cfa);
+  fill: #a3bcf7;
+}
+
+.paint:hover {
+  fill-opacity: 0.5;
+}
+
+.pointer {
+  filter: drop-shadow(0px 0px 10px #058cfa);
+  fill: #535cc5;
+  stroke: #131212;
+  stroke-width: 1;
+}
+
+.pointer:hover {
+  fill-opacity: 0.5;
+}
+
+.graph-base {
+  font-size: 18px;
+  text-shadow:
+    0 1px 2px #feffff,
+    0 0 0px #818181;
+  stroke: #405873;
+  fill: #405873;
+}
+
+.cell {
+  text-align: center;
+  width: 50%;
+  float: left;
+}
+
+input, select {
+  margin-left: 1em;
+  color: inherit;
+  background-color: #192119;
+}
+

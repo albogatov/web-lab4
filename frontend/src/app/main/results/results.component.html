@@ -1,0 +1,22 @@
+<td colspan="2">
+  <table width="100%" id="result-table" class="result-table">
+    <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>R</th>
+      <th>Hit detect</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let result of results">
+      <td>{{result.x}}</td>
+      <td>{{result.y}}</td>
+      <td>{{result.r}}</td>
+      <td>{{result.hit}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <button value="false" [hidden]="true" id="helper"></button>
+</td>
+

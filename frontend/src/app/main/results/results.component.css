@@ -1,0 +1,28 @@
+.result-table {
+  text-align: center;
+  margin-top: 20px;
+  border: 0.2rem solid #fff;
+  /*border-radius: 2rem;*/
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #134afe,
+  0 0 0.8rem #13b7fe,
+  0 0 2.8rem #13c7fe,
+  inset 0 0 .7rem #13fef6;
+  background-color: #0d110d;
+  table-layout: fixed;
+  color: inherit;
+  border-collapse: collapse;
+}
+
+.result-table tr {
+  border: 2px solid #ffffff;
+  background-color: #0d110d;
+}
+.result-table td {
+  border: 1px solid white;
+}
+
+.result-table tr:nth-child(2n-1) {
+  background-color: #1a1b1f;
+}

@@ -1,0 +1,40 @@
+<div class="form-cont">
+<form #loginForm="ngForm" (ngSubmit)="logIn(loginForm)" novalidate>
+  <table width="100%">
+    <tr style="text-align: center">
+      <td>
+        <fieldset>
+          <label for="login">Enter login</label><br>
+          <input type="text" id="login" #log="ngModel" name="login" [(ngModel)]="login" required/>
+          <label class="text-error" *ngIf="log.invalid && log.touched"><br>Please enter a valid login</label>
+        </fieldset>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fieldset>
+          <label for="pwd">Enter password</label><br>
+          <input type="password" id="pwd" #pw="ngModel" name="password" [(ngModel)]="pwd" required minlength="6"/>
+          <label class="text-error" *ngIf="pw.invalid && pw.touched"><br>Please enter a valid password with 6 or
+            more characters</label>
+        </fieldset>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fieldset>
+          <label class="text-error" id="error"></label>
+          <button id="send" class="comm-button-table" type="button" value="Register" (click)="register(loginForm)">Register
+          </button>
+          <button type="submit" class="comm-button-table"  value="Log in">Log in</button>
+        </fieldset>
+      </td>
+    </tr>
+    <!--    <tr>-->
+    <!--      <td>-->
+    <!--        <a routerLink="./registration/register" class="btn btn-link">Register</a>-->
+    <!--      </td>-->
+    <!--    </tr>-->
+  </table>
+</form>
+</div>

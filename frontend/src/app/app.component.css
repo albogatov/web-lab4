@@ -1,0 +1,68 @@
+:host {
+  width: 100%;
+}
+.left-alligned {
+  float: left;
+}
+
+.right-alligned {
+  float: right;
+}
+
+.header {
+  background-color: #010a01;
+  margin: 0%;
+  padding: 0%;
+  border: 0.2rem solid #fff;
+  /*border-radius: 2rem;*/
+  padding: 0.4em;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #134afe,
+  0 0 0.8rem #13b7fe,
+  0 0 2.8rem #13c7fe,
+  inset 0 0 .7rem #13fef6;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.header-cell {
+  animation: pulsate 0.15s infinite alternate;
+  text-shadow:
+    0 0 0px #fff,
+    0 0 1px #fff,
+    0 0 7px #fff,
+    0 0 90px #00a6ff,
+    0 0 82px #0095ff,
+    0 0 92px #00e1ff,
+    0 0 102px #00ffff,
+    0 0 200px #00ffc4;
+  text-align: center;
+}
+
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #00a6ff,
+      0 0 80px #0095ff,
+      0 0 90px #00e1ff,
+      0 0 100px #00ffff,
+      0 0 300px #00ffc4;
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow:
+      0 0 4px #fff,
+      0 0 10px #fff,
+      0 0 18px #fff,
+      0 0 38px #00a6ff,
+      0 0 73px #0095ff,
+      0 0 80px #00e1ff,
+      0 0 94px #00ffff,
+      0 0 140px #00ffc4;
+  }
+}
