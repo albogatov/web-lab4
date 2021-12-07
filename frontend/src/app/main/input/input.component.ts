@@ -99,9 +99,10 @@ export class InputComponent implements AfterContentInit {
 
   addResultFromClick(event) {
     this.clicked(event);
-    // console.log(this.result.r);
-    if (this.result.r == null || !(-4 <= this.result.r && this.result.r <= 4))
+    if (this.result.r == null || !(-4 <= this.result.r && this.result.r <= 4)) {
+      this.rValidity = false;
       return;
+    }
     let curR = this.result.r;
     let canvasX = (this.newPoint.x - this.graphParams.GRAPH_WIDTH / 2) * Math.abs(curR) / (this.graphParams.GRAPH_WIDTH / 2 - this.graphParams.INDENT);
     canvasX = parseFloat(canvasX.toString().substring(0, 5));
@@ -166,11 +167,9 @@ export class InputComponent implements AfterContentInit {
 
   redrawResults(e) {
     this.result.r = e;
-    if (e == 0) {
-      let pointers = document.querySelectorAll(".pointer") as NodeListOf<HTMLElement>;
-      for (let i = 0; i < pointers.length; i++) {
-        pointers[i].setAttributeNS(null,"r", String(0));
-      }
+    let pointers = document.querySelectorAll(".pointer") as NodeListOf<HTMLElement>;
+    for (let i = 0; i < pointers.length; i++) {
+      pointers[i].setAttributeNS(null, "r", String(0));
     }
     if (e >= -4 && e <= 4 && e && e != 0) {
       console.log("drawing");
@@ -189,7 +188,7 @@ export class InputComponent implements AfterContentInit {
         } else pointers[i].style.fill = "#c553a1";
         pointers[i].setAttributeNS(null, "cx", String(moveX));
         pointers[i].setAttributeNS(null, "cy", String(moveY));
-        pointers[i].setAttributeNS(null,"r", String(5));
+        pointers[i].setAttributeNS(null, "r", String(5));
       }
     }
   }
@@ -226,11 +225,14 @@ export class InputComponent implements AfterContentInit {
   }
 
   drawAllResults() {
-
-    let helper = document.getElementById("helper") as HTMLButtonElement;
-    while (helper.value != "true") {
-      console.log("waiting");
+    let pointers = document.querySelectorAll(".pointer") as NodeListOf<HTMLElement>;
+    for (let i = 0; i < pointers.length; i++) {
+      pointers[i].setAttributeNS(null, "r", String(0));
     }
+    // let helper = document.getElementById("helper") as HTMLButtonElement;
+    // while (helper.value != "true") {
+    //   console.log("waiting");
+    // }
     console.log("started drawing");
     let data = Array();
     let table = document.getElementById("result-table") as HTMLTableElement;
@@ -244,7 +246,7 @@ export class InputComponent implements AfterContentInit {
       }
       for (let i = 0; i < data.length; i++) {
         if (data[i][0])
-          this.drawResult(new Result(null, data[i][0], data[i][1], data[i][2], null));
+          this.drawResult(new Result(null, data[i][0], data[i][1], this.result.r, null));
       }
     }, 0);
   }

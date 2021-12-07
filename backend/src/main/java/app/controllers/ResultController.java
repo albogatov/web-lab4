@@ -5,6 +5,8 @@ import app.entities.Result;
 import app.entities.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import app.repos.ResultRepo;
 import app.repos.UserRepo;
@@ -51,8 +53,9 @@ public class ResultController {
 
     @CrossOrigin
     @DeleteMapping("/results/clear")
-    public void clearResults(Principal user) {
+    public void clearResults(Authentication authentication) {
         log.info("requested to clear");
-        resultRepo.deleteAll();
+        List<Result> toClear = resultRepo.findAllByUser((UserDetails) authentication.getPrincipal());
+        toClear.stream().forEach(result -> resultRepo.delete(result));
     }
 }

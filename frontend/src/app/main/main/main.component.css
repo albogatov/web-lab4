@@ -23,10 +23,15 @@ fieldset {
 .link-button:hover {
   background-color: #192119;
 }
-/*#grid {*/
-/*  table-layout: fixed ;*/
-/*  width: 100% ;*/
-/*}*/
+
+@media only screen and (max-device-width: 866px) {
+  #grid {
+    text-align: center;
+    width: 100%;
+    float: left;
+  }
+}
+
 
 /*#grid tr {*/
 

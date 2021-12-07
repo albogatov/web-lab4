@@ -33,3 +33,76 @@ fieldset {
 .link-button:hover {
   background-color: #192119;
 }
+
+@media only screen and (max-device-width: 866px) {
+  fieldset {
+    /*margin-left: 35%;*/
+    /*margin-right: 38%;*/
+    margin-top: 40px;
+    /*margin: 15px;*/
+    display: flow;
+    position: relative;
+    text-align: center;
+  }
+
+  .cont {
+    text-align: center;
+    width: 100%;
+    float: left;
+  }
+
+  .link-button {
+    margin-left: 0px;
+    margin-top: 20px;
+    background-color: #0d110d;
+    border: 0.2rem solid #fff;
+    /*border-radius: 2rem;*/
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #134afe,
+    0 0 0.8rem #13b7fe,
+    0 0 2.8rem #13c7fe,
+    inset 0 0 .7rem #13fef6;
+    color: inherit;
+    padding: 15px 32px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-device-width: 1239px) and (max-device-height: 1239px) and (min-device-width: 866px){
+  /*.cont {*/
+  /*
+  /*  width:100%;*/
+  /*}*/
+
+  .link-button {
+    font-size: 35px;
+    margin-top: 20px;
+    background-color: #0d110d;
+    border: 0.2rem solid #fff;
+    /*border-radius: 2rem;*/
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #134afe,
+    0 0 0.8rem #13b7fe,
+    0 0 2.8rem #13c7fe,
+    inset 0 0 .7rem #13fef6;
+    color: inherit;
+    padding: 15px 32px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  fieldset {
+    /*margin-left: 35%;*/
+    /*margin-right: 38%;*/
+    margin-top: 70px;
+    font-size: 35px;
+    /*margin: 15px;*/
+    display: flow;
+    position: relative;
+    text-align: center;
+  }
+}

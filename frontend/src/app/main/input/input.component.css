@@ -135,3 +135,11 @@ input, select {
   background-color: #192119;
 }
 
+@media only screen and (max-device-width: 866px) {
+  .cell {
+    width:100%;
+    display: flex;
+    justify-content: center;
+  }
+
+}

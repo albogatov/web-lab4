@@ -3,6 +3,7 @@ package app.controllers;
 import app.data.ResponseMessage;
 import app.data.UserData;
 import app.entities.User;
+import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

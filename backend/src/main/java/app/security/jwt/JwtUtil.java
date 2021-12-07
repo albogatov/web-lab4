@@ -62,9 +62,7 @@ public class JwtUtil {
         User user = userService.find(login);
         System.out.println(user);
         String token = null;
-        if (user.getAuthToken() != null)
-            token = user.getAuthToken();
-        else token = generateJwtToken(login);
+        token = generateJwtToken(login);
 
         user.setAuthToken(token);
         userService.save(user);

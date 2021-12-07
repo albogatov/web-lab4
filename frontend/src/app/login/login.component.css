@@ -63,3 +63,10 @@ fieldset {
     float: left;
   }
 }
+
+@media only screen and (max-device-width: 1239px) and (max-device-height: 1239px) and (min-device-width: 866px) {
+  form {
+    margin-top: 140px;
+    transform: scale(1.5);
+  }
+}

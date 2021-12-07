@@ -18,8 +18,8 @@ export class ResultsComponent {
     this.resultsService.results.subscribe(value =>
       this.results = value.sort((res1, res2) => res1.id - res2.id));
     this.resultsService.getAllResults();
-    let helper = document.getElementById("helper") as HTMLButtonElement;
-    helper.value = "true";
+    // let helper = document.getElementById("helper") as HTMLButtonElement;
+    // helper.value = "true";
   }
 
 }

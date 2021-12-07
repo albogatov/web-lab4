@@ -27,8 +27,10 @@ export class LoginComponent implements OnInit {
       this.authService.login({login: this.login, password: this.pwd})
         .subscribe(resp => this.router.navigate(['/main']),
           (error: HttpErrorResponse) => {
+          let br = document.createElement('br');
             console.log(error.error);
             document.getElementById('error').textContent = error.error.message;
+            document.getElementById('error').appendChild(br);
           });
     }
   }
@@ -41,12 +43,16 @@ export class LoginComponent implements OnInit {
           this.authService.login({login: this.login, password: this.pwd})
             .subscribe(resp => this.router.navigate(['/main']),
               (error: HttpErrorResponse) => {
-                console.log(error);
+                let br = document.createElement('br');
+                console.log(error.error);
                 document.getElementById('error').textContent = error.error.message;
+                document.getElementById('error').appendChild(br);
               });
         }, (error: HttpErrorResponse) => {
-          console.log(error);
+          let br = document.createElement('br');
+          console.log(error.error);
           document.getElementById('error').textContent = error.error.message;
+          document.getElementById('error').appendChild(br);
         });
     }
   }
