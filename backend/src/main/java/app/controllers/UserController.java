@@ -35,20 +35,15 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
+    @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Autowired
     private AuthenticationManager authenticationManager;
 
 
     @Autowired
-    private final UserService userService;
-
-    public UserController(UserService userService, BCryptPasswordEncoder encoder, AuthenticationManager authenticationManager) {
-        this.userService = userService;
-        this.bCryptPasswordEncoder = encoder;
-        this.authenticationManager = authenticationManager;
-    }
+    private UserService userService;
 
 
     @PostMapping("/register")
@@ -90,23 +85,6 @@ public class UserController {
         } catch (AuthenticationException e) {
             return new ResponseEntity<>(new ResponseMessage("Wrong login or password"), HttpStatus.UNAUTHORIZED);
         }
-//        User toAuthenticate = (User) userService.loadUserByUsername(login);
-//        if (toAuthenticate == null)
-//            return new ResponseEntity<>(new ResponseMessage("Wrong login or password"), HttpStatus.OK);
-//        else if (!passwordEncoder.matches(user.getPassword(), toAuthenticate.getPassword())) {
-//            return new ResponseEntity<>(new ResponseMessage("Wrong login or password"), HttpStatus.OK);
-//        } else {
-//            String token = jwtUtil.generateJwtToken(login);
-//            if (jwtUtil.validateJwtToken(token)) {
-//                toAuthenticate.setAuthToken(token);
-//                logger.error("User logged in");
-//                return new ResponseEntity<>(new ResponseMessage("User logged in"), HttpStatus.OK);
-//            } else {
-//                logger.error("Wrong login or pwd");
-//                return new ResponseEntity<>(new ResponseMessage("Wrong login or password"), HttpStatus.OK);
-//            }
-//
-//        }
     }
 
 

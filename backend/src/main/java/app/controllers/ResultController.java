@@ -27,12 +27,6 @@ public class ResultController {
     @Autowired
     private ResultOperations graph;
 
-//    ResultController(ResultRepo resultRepo, UserRepo userRepo, ResultOperations graph) {
-//        this.resultRepo = resultRepo;
-//        this.userRepo = userRepo;
-//        this.graph = graph;
-//
-//    }
 
     @CrossOrigin
     @GetMapping("/results/get")

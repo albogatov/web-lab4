@@ -43,15 +43,6 @@ export class TokenInterceptor implements HttpInterceptor {
         }
       })
     }
-    // request = request.clone({
-    //   headers: request.headers.set('Access-Control-Allow-Origin','http://localhost:4200')
-    // });
-    // request = request.clone({
-    //   headers: request.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-    // })
-    // request = request.clone({
-    //   headers: request.headers.set('Access-Control-Allow-Headers', 'Content-Type')
-    // })
     return next.handle(request).pipe(
       map((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {

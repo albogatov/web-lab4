@@ -6,7 +6,9 @@ import {InputComponent} from "../main/input/input.component";
 
 @Injectable()
 export class ResultService {
-  private apiUrl = 'http://localhost:8080/api/';
+  private apiUrl = 'http://localhost:40892/demo-1/api/';
+  // private apiUrl = 'http://localhost:8080/api/';
+
   public results: BehaviorSubject<Result[]> = new BehaviorSubject<Result[]>([]);
   public component: InputComponent;
 
@@ -31,10 +33,6 @@ export class ResultService {
       error: error => console.error('Observer got an error: ' + error),
       complete: () => this.component.drawAllResults(),
     });
-    // return this.http.get<Result[]>(this.apiUrl + 'results/get', {headers: this.getHeaders()}).subscribe((data) => {
-    //   this.results.next(data as Result[]);
-    //   console.log("result got");
-    // });
   }
 
   saveResult(result: Result) {

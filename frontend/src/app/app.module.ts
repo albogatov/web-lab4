@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {NotFoundComponent} from "./error/not-found.component";
 import {LoginComponent} from "./login/login.component";
 import {NotAuthorizedComponent} from "./error/error-auth/not-authorized.component";
@@ -32,7 +32,7 @@ import {ResultsComponent} from "./main/results/results.component";
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     ResultService,
@@ -45,4 +45,5 @@ import {ResultsComponent} from "./main/results/results.component";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

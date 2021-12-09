@@ -15,7 +15,7 @@
             <input maxlength="10" size="22" type="text" class="form-control"
                    placeholder="Y must be in the range of (-5;3)" id="y"
                    name="y" [(ngModel)]="result.y" #y="ngModel" required/>
-            <p *ngIf="!y.untouched || !yValidity" class="text-error">
+            <p *ngIf="!yValidity" class="text-error">
               Y must be a number in the range of (-5;3)
             </p>
           </fieldset>

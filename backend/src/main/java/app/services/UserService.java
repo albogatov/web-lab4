@@ -11,11 +11,12 @@ import app.repos.UserRepo;
 @Service
 public class UserService implements UserDetailsService {
 
-    private final UserRepo userRepo;
-
-    public UserService(UserRepo userRepo) {
-        this.userRepo = userRepo;
-    }
+    @Autowired
+    private UserRepo userRepo;
+//
+//    public UserService(UserRepo userRepo) {
+//        this.userRepo = userRepo;
+//    }
 
     public User save(User user) {
         return userRepo.saveAndFlush(user);

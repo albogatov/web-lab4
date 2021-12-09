@@ -51,11 +51,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public JwtAuthFilter authFilter() {
         return new JwtAuthFilter();
     }
-//
-//    @Bean
-//    public CORSFilter corsFilter() {
-//        return new CORSFilter();
-//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -69,30 +64,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/login", "/api/register").permitAll()
                 .anyRequest().authenticated();
-//        http.csrf().disable()
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/api/login", "/api/register").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin().loginPage("/api/login").permitAll()
-//                .and().logout().logoutUrl("/api/logout").and()
-//                .csrf().disable()
-//                .exceptionHandling().authenticationEntryPoint(unauthHandler)
-//                .and()
-//                .addFilterBefore(authFilter(), UsernamePasswordAuthenticationFilter.class);
-//        http.cors();
 
 
     }
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry) {
-//        registry.addMapping("/**")
-//                .allowedOriginPatterns("*")
-//                .allowedMethods("*")
-//                .allowedHeaders("*")
-//                .allowCredentials(true);
-//    }
+
 }

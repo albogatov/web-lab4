@@ -8,7 +8,8 @@ import {ResponseMessage} from "../models/response-message";
 
 @Injectable()
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/api/';
+  private apiUrl = 'http://localhost:40892/demo-1/api/';
+  // private apiUrl = 'http://localhost:8080/api/';
   public isLoggedIn = false;
   redirectUrl: string;
 
@@ -24,10 +25,6 @@ export class AuthService {
         console.log("register error: " + error.message);
       }
     }));
-    // return this.httpClient.post(this.apiUrl + 'register', user).pipe(tap((resp) => console.log(resp),
-    //   error => {
-    //     console.log("register error: " + error.message);
-    //   }));
   }
 
   private getHeaders(): HttpHeaders {
@@ -45,8 +42,6 @@ export class AuthService {
     return this.httpClient.post(this.apiUrl + 'login', user).pipe(tap({
         next: data => {
           const token = (<ResponseMessage>data).message;
-          // console.log(token);
-          // console.log(<ResponseMessage>data);
           localStorage.setItem('authToken', <string>token);
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.isLoggedIn = true;

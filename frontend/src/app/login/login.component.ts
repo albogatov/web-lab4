@@ -13,8 +13,6 @@ export class LoginComponent implements OnInit {
   login: string;
   pwd: string;
   success = false;
-  // loginValid: boolean;
-  // pwdValid: boolean;
 
   constructor(private authService: AuthService, private router: Router) {
   }
@@ -39,7 +37,6 @@ export class LoginComponent implements OnInit {
     if (loginForm.valid) {
       this.authService.register({login: this.login, password: this.pwd})
         .subscribe(data => {
-          // this.router.navigate(['/login']).then();
           this.authService.login({login: this.login, password: this.pwd})
             .subscribe(resp => this.router.navigate(['/main']),
               (error: HttpErrorResponse) => {
@@ -56,32 +53,4 @@ export class LoginComponent implements OnInit {
         });
     }
   }
-
-  // logIn(loginForm) {
-  //   if (loginForm.valid) {
-  //     this.authService.login({login: this.login, password: this.pwd})
-  //       .subscribe((result: any) => {
-  //       if (result.token) {
-  //         localStorage.setItem('token', result.token);
-  //         this.router.navigate(['main']);
-  //       }
-  //     }, (error) => {
-  //
-  //     });
-  //   } else {
-  //
-  //   }
-  // }
-  //
-  // register(loginForm) {
-  //   if (loginForm.valid) {
-  //     this.authService.register({login: this.login, password: this.pwd}).subscribe((result: any) => {
-  //
-  //     }, (error) => {
-  //
-  //     });
-  //   } else {
-  //
-  //   }
-  // }
 }

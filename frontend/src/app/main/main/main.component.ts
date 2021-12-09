@@ -16,10 +16,6 @@ export class MainComponent {
 
   constructor(private authGuard: AuthGuard, private authService: AuthService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    // this.drawAllResults = new EventEmitter<boolean>();
-    // this.updateTable = new EventEmitter<boolean>();
-    // this.needDrawAllResults = new EventEmitter<boolean>();
-    // this.needUpdateTable = new EventEmitter<boolean>();
   }
 
   logOut() {

@@ -65,18 +65,15 @@ export class InputComponent implements AfterContentInit {
   }
 
   addResult(form: NgForm) {
-    if (!isFinite(this.result.x) || !(-4 <= this.result.x && this.result.x <= 4)) {
+    if (!isFinite(this.result.x) || this.result.x == null || !(-4 <= this.result.x && this.result.x <= 4)) {
       console.log("here");
       this.xValidity = false;
-      // return false;
-    } else if (!isFinite(this.result.y) || !(-5 <= this.result.y && this.result.y <= 3)) {
+    } else if (!isFinite(this.result.y) || this.result.y == null || !(-5 <= this.result.y && this.result.y <= 3)) {
       console.log("here");
       this.yValidity = false;
-      // return false;
-    } else if (!isFinite(this.result.r) || !(-4 <= this.result.r && this.result.r <= 4) || form.invalid) {
-      console.log("here");
+    } else if (!isFinite(this.result.r) || this.result.r == null || !(-4 <= this.result.r && this.result.r <= 4) || form.invalid) {
+      console.log("here" + this.result.x + " " + this.result.y + " " + this.result.r);
       this.rValidity = false;
-      // return false;
     } else {
       console.log("here");
       this.xValidity = true;
@@ -88,9 +85,9 @@ export class InputComponent implements AfterContentInit {
       }).catch((error: HttpErrorResponse) => {
         console.log("save result error");
         console.log(error.status + error.message);
-        // if (error.status === 401 || error.status === 403) {
-        //   this.authService.logOut(;
-        // }
+        if (error.status === 401 || error.status === 403) {
+          this.authService.logout(JSON.parse(localStorage.getItem("currentUser")));
+        }
       })
       return true;
     }
@@ -229,10 +226,6 @@ export class InputComponent implements AfterContentInit {
     for (let i = 0; i < pointers.length; i++) {
       pointers[i].setAttributeNS(null, "r", String(0));
     }
-    // let helper = document.getElementById("helper") as HTMLButtonElement;
-    // while (helper.value != "true") {
-    //   console.log("waiting");
-    // }
     console.log("started drawing");
     let data = Array();
     let table = document.getElementById("result-table") as HTMLTableElement;
